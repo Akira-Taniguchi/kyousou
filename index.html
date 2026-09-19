@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>貝塚デジタル共創ラボ｜AI・DX・デジタルマネーの基礎を学ぶ</title>
+<meta name="description" content="貝塚市で開催する、AI・DX・デジタルマネーの基礎を学ぶ参加費無料の講座です。高校生以上の方ならどなたでもご参加いただけます。貝塚市公民連携による地域活性化共創チャレンジ事業。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="貝塚デジタル共創ラボ｜AI・DX・デジタルマネーの基礎を学ぶ">
+<meta property="og:description" content="貝塚市で開催する、AI・DX・デジタルマネーの基礎を学ぶ参加費無料の講座です。高校生以上の方ならどなたでも。">
+<meta property="og:image" content="logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0f5fa6;
+    --blue-deep:#0a4478;
+    --red:#e4322b;
+    --sky:#8ed4ee;
+    --sky-soft:#e8f6fc;
+    --cream:#fcefce;
+    --ink:#16242f;
+    --muted:#5b6b78;
+    --line:#dbe4ea;
+    --bg:#ffffff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    text-size-adjust:100%;
+  }
+  .wrap{width:100%;max-width:880px;margin:0 auto;padding:0 16px;}
+
+  /* ---- 事業名バー（必須文言 ①）---- */
+  .gov-bar{
+    background:var(--blue);
+    color:#fff;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.02em;
+    text-align:center;
+    padding:9px 16px;
+    line-height:1.6;
+  }
+
+  /* ---- ヘッダー ---- */
+  header{
+    border-bottom:1px solid var(--line);
+    background:#fff;
+  }
+  .header-inner{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 16px;
+  }
+  .header-inner img{width:62px;height:auto;display:block;flex-shrink:0;}
+  .header-text{font-size:13px;color:var(--muted);font-weight:500;line-height:1.55;}
+  .header-text strong{display:block;color:var(--ink);font-size:15px;font-weight:700;}
+
+  /* ---- ヒーロー ---- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1100px 340px at 15% -30%, var(--sky-soft) 0%, rgba(232,246,252,0) 70%),
+      linear-gradient(180deg,#fff 0%,var(--sky-soft) 100%);
+    padding:52px 0 56px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero .logo-big{width:186px;max-width:52vw;height:auto;margin:0 auto 22px;display:block;}
+  .free-badge{
+    display:inline-block;
+    background:var(--red);color:#fff;
+    font-weight:700;font-size:14px;
+    padding:5px 18px;border-radius:999px;
+    letter-spacing:.06em;
+    margin-bottom:16px;
+  }
+  h1{
+    font-size:clamp(27px,6.4vw,44px);
+    font-weight:900;
+    line-height:1.32;
+    margin:0 0 12px;
+    color:var(--blue-deep);
+    letter-spacing:.01em;
+  }
+  .hero-sub{
+    font-size:clamp(14px,3.5vw,19px);
+    font-weight:700;
+    color:var(--blue);
+    margin:0 0 20px;
+  }
+  .hero-lead{
+    font-size:15px;
+    color:var(--muted);
+    max-width:620px;
+    margin:0 auto;
+    text-align:left;
+  }
+  @media(min-width:640px){.hero-lead{text-align:center;}}
+
+  /* ---- セクション ---- */
+  section{padding:52px 0;}
+  section.alt{background:#f7fafc;}
+  h2{
+    font-size:22px;font-weight:900;margin:0 0 6px;
+    color:var(--blue-deep);
+    display:flex;align-items:center;gap:10px;
+  }
+  h2::before{
+    content:"";width:5px;height:22px;border-radius:3px;
+    background:var(--red);flex-shrink:0;
+  }
+  .sec-note{font-size:14px;color:var(--muted);margin:0 0 24px;padding-left:15px;}
+
+  /* ---- 準備中バッジ ---- */
+  .tbd{
+    display:inline-block;
+    background:#fff;
+    border:1px dashed #b9c6d1;
+    color:var(--muted);
+    font-size:13px;font-weight:500;
+    padding:2px 12px;border-radius:999px;
+    white-space:nowrap;
+  }
+
+  /* ---- 開催概要 ---- */
+  .info{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:#fff;
+  }
+  .info dl{margin:0;display:grid;grid-template-columns:1fr;}
+  @media(min-width:600px){.info dl{grid-template-columns:150px 1fr;}}
+  .info dt{
+    background:#f2f7fa;
+    font-weight:700;font-size:14px;
+    padding:13px 18px;
+    border-top:1px solid var(--line);
+    color:var(--blue-deep);
+  }
+  .info dd{
+    margin:0;padding:13px 18px;font-size:15px;
+    border-top:1px solid var(--line);
+  }
+  @media(max-width:599px){
+    .info dt{padding-bottom:2px;border-bottom:none;}
+    .info dd{border-top:none;padding-top:4px;}
+  }
+  .info dl > dt:first-of-type,
+  .info dl > dt:first-of-type + dd{border-top:none;}
+  .info dd small{display:block;font-size:13px;color:var(--muted);margin-top:3px;}
+  .price{color:var(--red);font-weight:900;font-size:18px;}
+
+  /* ---- カリキュラム ---- */
+  .cards{
+    display:grid;gap:16px;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:700px){.cards{grid-template-columns:repeat(3,1fr);}}
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+  }
+  .card .num{
+    font-size:12px;font-weight:700;color:var(--red);
+    letter-spacing:.14em;margin-bottom:6px;
+  }
+  .card h3{margin:0 0 8px;font-size:18px;font-weight:900;color:var(--blue-deep);}
+  .card p{margin:0;font-size:14px;color:var(--muted);line-height:1.8;}
+
+  /* ---- 第1回テーマ ---- */
+  .theme-box{
+    background:var(--cream);
+    border-radius:var(--radius);
+    padding:30px 22px;
+    text-align:center;
+  }
+  .theme-box .label{
+    font-size:13px;font-weight:700;color:var(--blue-deep);
+    letter-spacing:.1em;margin-bottom:10px;
+  }
+  .theme-box .tbd{font-size:15px;padding:6px 22px;background:rgba(255,255,255,.75);}
+
+  /* ---- 申込 ---- */
+  .apply{
+    border:2px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 22px;
+    text-align:center;
+    background:#fff;
+  }
+  .btn-disabled{
+    display:inline-block;
+    background:#e6ecf1;color:#8fa0ad;
+    font-size:16px;font-weight:700;
+    padding:15px 44px;border-radius:999px;
+    cursor:not-allowed;user-select:none;
+  }
+  .apply p{margin:14px 0 0;font-size:14px;color:var(--muted);}
+  .notice{
+    margin-top:22px;
+    font-size:13px;color:var(--muted);
+    text-align:left;
+    border-top:1px solid var(--line);
+    padding-top:16px;
+  }
+  .notice ul{margin:0;padding-left:1.2em;}
+  .notice li{margin-bottom:5px;}
+
+  /* ---- フッター ---- */
+  footer{
+    background:var(--blue-deep);
+    color:#fff;
+    padding:36px 0 30px;
+    text-align:center;
+  }
+  footer img{width:120px;height:auto;background:#fff;border-radius:12px;padding:10px;margin-bottom:18px;}
+  .footer-label{
+    font-size:15px;font-weight:700;line-height:1.7;margin:0 0 6px;
+  }
+  .footer-sub{font-size:13px;opacity:.82;margin:0;}
+  .footer-meta{
+    margin-top:22px;padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.22);
+    font-size:12px;opacity:.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- 必須記載事項 ①事業名の文言 -->
+<div class="gov-bar">貝塚市公民連携による地域活性化共創チャレンジ事業</div>
+
+<header>
+  <div class="wrap header-inner">
+    <!-- 必須記載事項 ②ロゴマーク -->
+    <img src="logo.png" alt="かいづか共創チャレンジ ～未来にツナゲル共創チャレンジ～ ロゴマーク">
+    <div class="header-text">
+      <strong>貝塚デジタル共創ラボ</strong>
+      ～AI・DX・デジタルマネーの基礎を学ぶ～
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <img class="logo-big" src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
+    <span class="free-badge">参加費　無料</span>
+    <h1>貝塚デジタル共創ラボ</h1>
+    <p class="hero-sub">～AI・DX・デジタルマネーの基礎を学ぶ～</p>
+    <p class="hero-lead">
+      「名前は聞くけれど、さわったことがない」。<br>
+      AI、DX、デジタルマネー。これからの暮らしと仕事にかかわる3つのテーマを、
+      専門用語からではなく、実際に手を動かすところから学べる講座です。
+      貝塚市内で、どなたでも無料でご参加いただけます。
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>開催概要</h2>
+    <p class="sec-note">日程・会場は調整中です。決まり次第、このページでお知らせします。</p>
+    <div class="info">
+      <dl>
+        <dt>講座名</dt>
+        <dd>貝塚デジタル共創ラボ<br><small>～AI・DX・デジタルマネーの基礎を学ぶ～</small></dd>
+
+        <dt>開催日時</dt>
+        <dd><span class="tbd">準備中</span><small>決定次第、このページでお知らせします</small></dd>
+
+        <dt>会場</dt>
+        <dd><span class="tbd">準備中</span><small>大阪府貝塚市内で開催予定です</small></dd>
+
+        <dt>参加費</dt>
+        <dd><span class="price">無料</span></dd>
+
+        <dt>定員</dt>
+        <dd><span class="tbd">準備中</span></dd>
+
+        <dt>対象</dt>
+        <dd>
+          高校生以上の方ならどなたでも
+          <small>スマートフォン、またはノートパソコンの基本的な操作ができる方。18歳未満の方は、保護者の同意のうえお申し込みください。</small>
+        </dd>
+
+        <dt>持ち物</dt>
+        <dd>
+          スマートフォン、またはノートパソコン
+          <small>お持ちでない場合のご案内は、詳細決定時にあわせてお知らせします。</small>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>学ぶ3つのテーマ</h2>
+    <p class="sec-note">回を重ねながら、3つのテーマをひととおり扱っていく予定です。</p>
+    <div class="cards">
+      <div class="card">
+        <div class="num">THEME 01</div>
+        <h3>AI</h3>
+        <p>生成AIとは何か、という話から始めて、実際に文章をつくったり、調べものを手伝ってもらったり。その場で触りながら、仕事や暮らしでの使いどころを確かめます。</p>
+      </div>
+      <div class="card">
+        <div class="num">THEME 02</div>
+        <h3>DX</h3>
+        <p>「デジタル化」と何が違うのか。小さなお店や事業所でも今日から試せる、手書き・手作業を減らすための考え方と道具を紹介します。</p>
+      </div>
+      <div class="card">
+        <div class="num">THEME 03</div>
+        <h3>デジタルマネー</h3>
+        <p>キャッシュレス決済や電子マネーの仕組みを、安全に使うための注意点とあわせて整理します。仕組みを知ると、選び方と守り方が見えてきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>第1回のテーマ</h2>
+    <p class="sec-note">初回に扱う内容を検討しています。</p>
+    <div class="theme-box">
+      <div class="label">FIRST SESSION</div>
+      <span class="tbd">準備中</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="apply">
+  <div class="wrap">
+    <h2>お申し込み</h2>
+    <p class="sec-note">お申し込みの受付は、準備が整い次第このページで開始します。</p>
+    <div class="apply">
+      <span class="btn-disabled">申込フォーム　準備中</span>
+      <p>日程の決定にあわせて、申込フォームを公開します。</p>
+      <div class="notice">
+        <ul>
+          <li>参加費は無料です。</li>
+          <li>18歳未満の方は、保護者の同意のうえお申し込みください。</li>
+          <li>当日は記録のため、会場の写真を撮影する場合があります。</li>
+          <li>お問い合わせ先：<span class="tbd">準備中</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <!-- 必須記載事項 ②ロゴマーク -->
+    <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
+    <!-- 必須記載事項 ①事業名の文言 -->
+    <p class="footer-label">貝塚市公民連携による<br>地域活性化共創チャレンジ事業</p>
+    <p class="footer-sub">貝塚デジタル共創ラボ ～AI・DX・デジタルマネーの基礎を学ぶ～</p>
+    <div class="footer-meta">本事業は、貝塚市公民連携共創推進協議会の採択事業です。</div>
+  </div>
+</footer>
+
+</body>
+</html>
