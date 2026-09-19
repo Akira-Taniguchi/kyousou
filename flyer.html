@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>貝塚デジタル共創ラボ チラシ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page{ size:A4; margin:0; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --blue:#0f5fa6;
+    --blue-deep:#0a4478;
+    --red:#e4322b;
+    --sky:#8ed4ee;
+    --sky-soft:#e8f6fc;
+    --cream:#fcefce;
+    --ink:#16242f;
+    --muted:#55656f;
+    --line:#cfdbe4;
+  }
+  html,body{
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    color:var(--ink);
+    background:#e9eef2;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .page{
+    width:210mm;height:297mm;
+    background:#fff;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  @media screen{
+    .page{margin:16px auto;box-shadow:0 4px 24px rgba(0,0,0,.18);}
+  }
+  @media print{
+    body{background:#fff;}
+    .page{margin:0;box-shadow:none;}
+  }
+
+  /* === 事業名バー（必須文言）=== */
+  .govbar{
+    background:var(--blue);color:#fff;
+    text-align:center;
+    font-size:3.5mm;font-weight:700;
+    letter-spacing:.04em;
+    padding:2.2mm 4mm;
+    flex-shrink:0;
+  }
+
+  /* === ヘッダー === */
+  .head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:4mm 12mm 0;
+    flex-shrink:0;
+  }
+  .head img{width:21mm;height:auto;}
+  .free{
+    background:var(--red);color:#fff;
+    font-size:4.4mm;font-weight:900;
+    letter-spacing:.08em;
+    padding:1.8mm 5.5mm;border-radius:20mm;
+    white-space:nowrap;
+  }
+
+  /* === タイトル === */
+  .title{
+    text-align:center;
+    padding:2mm 12mm 0;
+    flex-shrink:0;
+  }
+  .title .catch{
+    display:inline-block;
+    font-size:4mm;font-weight:700;color:var(--blue);
+    background:var(--sky-soft);
+    padding:1.2mm 5mm;border-radius:20mm;
+    margin-bottom:2.2mm;
+  }
+  h1{
+    font-size:13.5mm;font-weight:900;
+    color:var(--blue-deep);
+    line-height:1.15;
+    letter-spacing:.01em;
+  }
+  .sub{
+    font-size:5.4mm;font-weight:700;
+    color:var(--blue);
+    margin-top:2mm;
+  }
+  .lead{
+    font-size:3.6mm;line-height:1.75;
+    color:var(--muted);
+    margin-top:3mm;
+    text-align:center;
+  }
+
+  /* === 3テーマ === */
+  .themes{
+    display:flex;gap:4mm;
+    padding:5mm 12mm 0;
+    flex-shrink:0;
+  }
+  .theme{
+    flex:1;
+    border:0.4mm solid var(--line);
+    border-radius:3mm;
+    padding:3mm 2.5mm;
+    text-align:center;
+  }
+  .theme .n{font-size:2.6mm;font-weight:700;color:var(--red);letter-spacing:.16em;}
+  .theme h3{font-size:6mm;font-weight:900;color:var(--blue-deep);margin:1mm 0 1.5mm;line-height:1.2;}
+  .theme p{font-size:2.9mm;line-height:1.65;color:var(--muted);}
+
+  /* === 開催概要 === */
+  .info{
+    margin:5mm 12mm 0;
+    border:0.5mm solid var(--blue);
+    border-radius:3mm;
+    overflow:hidden;
+    flex-shrink:0;
+  }
+  .info-head{
+    background:var(--blue);color:#fff;
+    font-size:3.8mm;font-weight:900;
+    letter-spacing:.1em;
+    text-align:center;padding:1.4mm;
+  }
+  .info dl{display:grid;grid-template-columns:24mm 1fr;}
+  .info dt{
+    font-size:3.4mm;font-weight:700;color:var(--blue-deep);
+    background:#f2f7fa;
+    padding:1.8mm 3mm;
+    border-top:0.3mm solid var(--line);
+    display:flex;align-items:center;
+  }
+  .info dd{
+    font-size:3.5mm;
+    padding:1.8mm 4mm;
+    border-top:0.3mm solid var(--line);
+    display:flex;align-items:center;flex-wrap:wrap;gap:0 2mm;
+  }
+  .info dl > dt:first-of-type,
+  .info dl > dt:first-of-type + dd{border-top:none;}
+  .info dd small{font-size:2.9mm;color:var(--muted);display:block;width:100%;line-height:1.6;}
+  .tbd{
+    display:inline-block;
+    border:0.3mm dashed #a8b6c2;color:var(--muted);
+    font-size:3.2mm;
+    padding:.4mm 3mm;border-radius:10mm;
+  }
+  .yen{color:var(--red);font-weight:900;font-size:4.6mm;}
+
+  /* === 申込／QR === */
+  .apply{
+    margin:5mm 12mm 0;
+    background:var(--cream);
+    border-radius:3mm;
+    padding:4mm;
+    display:flex;align-items:center;gap:6mm;
+    flex-shrink:0;
+  }
+  .apply .qr{
+    width:28mm;height:28mm;
+    background:#fff;padding:2mm;border-radius:2mm;
+    flex-shrink:0;
+  }
+  .apply .qr img{width:100%;height:100%;display:block;}
+  .apply .txt{flex:1;}
+  .apply .ttl{
+    font-size:4.2mm;font-weight:900;color:var(--blue-deep);
+    margin-bottom:1.5mm;
+  }
+  .apply .url{
+    font-size:5mm;font-weight:700;color:var(--blue);
+    word-break:break-all;line-height:1.35;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    margin-bottom:1.5mm;
+  }
+  .apply .note{font-size:3mm;color:var(--muted);line-height:1.7;}
+
+  /* === 注意書き === */
+  .notes{
+    padding:3mm 12mm 0;
+    font-size:2.9mm;color:var(--muted);line-height:1.7;
+    flex-shrink:0;
+  }
+  .notes li{list-style:none;padding-left:3.5mm;position:relative;}
+  .notes li::before{content:"●";position:absolute;left:0;font-size:2mm;top:.6mm;color:var(--sky);}
+
+  /* === フッター === */
+  .foot{
+    margin-top:auto;
+    background:var(--blue-deep);color:#fff;
+    padding:3.5mm 12mm;
+    display:flex;align-items:center;justify-content:space-between;gap:5mm;
+    flex-shrink:0;
+  }
+  .foot img{width:17mm;height:auto;background:#fff;border-radius:2mm;padding:1.5mm;}
+  .foot .txt{text-align:right;}
+  .foot .main{font-size:4mm;font-weight:900;line-height:1.45;}
+  .foot .sub2{font-size:2.8mm;opacity:.8;margin-top:1mm;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 必須記載事項 ①事業名の文言 -->
+  <div class="govbar">貝塚市公民連携による地域活性化共創チャレンジ事業</div>
+
+  <div class="head">
+    <!-- 必須記載事項 ②ロゴマーク -->
+    <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
+    <span class="free">参加費　無料</span>
+  </div>
+
+  <div class="title">
+    <span class="catch">「名前は聞くけれど、さわったことがない」方へ</span>
+    <h1>貝塚デジタル共創ラボ</h1>
+    <div class="sub">～ AI・DX・デジタルマネーの基礎を学ぶ ～</div>
+    <p class="lead">
+      これからの暮らしと仕事にかかわる3つのテーマを、専門用語からではなく、<br>
+      実際に手を動かすところから学べる講座です。貝塚市内で開催します。
+    </p>
+  </div>
+
+  <div class="themes">
+    <div class="theme">
+      <div class="n">THEME 01</div>
+      <h3>AI</h3>
+      <p>生成AIとは何かという話から始めて、その場で触りながら、仕事や暮らしでの使いどころを確かめます。</p>
+    </div>
+    <div class="theme">
+      <div class="n">THEME 02</div>
+      <h3>DX</h3>
+      <p>「デジタル化」と何が違うのか。小さなお店でも今日から試せる考え方と道具を紹介します。</p>
+    </div>
+    <div class="theme">
+      <div class="n">THEME 03</div>
+      <h3>デジタルマネー</h3>
+      <p>キャッシュレス決済や電子マネーの仕組みを、安全に使うための注意点とあわせて整理します。</p>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="info-head">開催概要</div>
+    <dl>
+      <dt>開催日時</dt>
+      <dd><span class="tbd">準備中</span><small>決定次第、ウェブサイトでお知らせします</small></dd>
+
+      <dt>会場</dt>
+      <dd><span class="tbd">準備中</span><small>大阪府貝塚市内で開催予定です</small></dd>
+
+      <dt>参加費</dt>
+      <dd><span class="yen">無料</span></dd>
+
+      <dt>定員</dt>
+      <dd><span class="tbd">準備中</span></dd>
+
+      <dt>対象</dt>
+      <dd>高校生以上の方ならどなたでも
+        <small>スマートフォン、またはノートパソコンの基本的な操作ができる方</small>
+      </dd>
+
+      <dt>持ち物</dt>
+      <dd>スマートフォン、またはノートパソコン</dd>
+    </dl>
+  </div>
+
+  <div class="apply">
+    <div class="qr"><img src="qr.svg" alt="ウェブサイトのQRコード"></div>
+    <div class="txt">
+      <div class="ttl">くわしくは、ウェブサイトをご覧ください</div>
+      <div class="url">https://kyousou.vercel.app/</div>
+      <div class="note">
+        開催日・会場・お申し込み方法は、決定しだいウェブサイトでお知らせします。<br>
+        スマートフォンで左のQRコードを読み取ってください。
+      </div>
+    </div>
+  </div>
+
+  <ul class="notes">
+    <li>18歳未満の方は、保護者の同意のうえお申し込みください。</li>
+    <li>当日は記録のため、会場の写真を撮影する場合があります。</li>
+    <li>お問い合わせ先は準備中です。決定しだいウェブサイトでお知らせします。</li>
+  </ul>
+
+  <div class="foot">
+    <!-- 必須記載事項 ②ロゴマーク -->
+    <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
+    <div class="txt">
+      <!-- 必須記載事項 ①事業名の文言 -->
+      <div class="main">貝塚市公民連携による<br>地域活性化共創チャレンジ事業</div>
+      <div class="sub2">本事業は、貝塚市公民連携共創推進協議会の採択事業です。</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
