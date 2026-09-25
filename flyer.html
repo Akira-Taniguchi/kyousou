@@ -29,181 +29,154 @@
   }
   .page{
     width:210mm;height:297mm;
-    background:#fff;
-    margin:0 auto;
-    position:relative;
-    overflow:hidden;
+    background:#fff;margin:0 auto;
+    position:relative;overflow:hidden;
     display:flex;flex-direction:column;
   }
-  @media screen{
-    .page{margin:16px auto;box-shadow:0 4px 24px rgba(0,0,0,.18);}
-  }
-  @media print{
-    body{background:#fff;}
-    .page{margin:0;box-shadow:none;}
-  }
+  @media screen{ .page{margin:16px auto;box-shadow:0 4px 24px rgba(0,0,0,.18);} }
+  @media print{ body{background:#fff;} .page{margin:0;box-shadow:none;} }
 
-  /* === 事業名バー（必須文言）=== */
+  /* 必須文言バー */
   .govbar{
-    background:var(--blue);color:#fff;
-    text-align:center;
-    font-size:3.5mm;font-weight:700;
-    letter-spacing:.04em;
-    padding:2.2mm 4mm;
-    flex-shrink:0;
+    background:var(--blue);color:#fff;text-align:center;
+    font-size:3.4mm;font-weight:700;letter-spacing:.04em;
+    padding:2.1mm 4mm;flex-shrink:0;
   }
 
-  /* === ヘッダー === */
+  /* ヘッダー */
   .head{
     display:flex;align-items:center;justify-content:space-between;
-    padding:4mm 12mm 0;
-    flex-shrink:0;
+    padding:3.5mm 11mm 0;flex-shrink:0;
   }
-  .head img{width:21mm;height:auto;}
-  .free{
-    background:var(--red);color:#fff;
-    font-size:4.4mm;font-weight:900;
-    letter-spacing:.08em;
-    padding:1.8mm 5.5mm;border-radius:20mm;
-    white-space:nowrap;
+  .head img{width:19mm;height:auto;}
+  .badges{display:flex;gap:2mm;}
+  .badge{
+    color:#fff;font-weight:900;white-space:nowrap;
+    font-size:3.8mm;letter-spacing:.06em;
+    padding:1.5mm 4.5mm;border-radius:20mm;
   }
+  .badge.red{background:var(--red);}
+  .badge.blue{background:var(--blue);}
 
-  /* === タイトル === */
-  .title{
-    text-align:center;
-    padding:2mm 12mm 0;
-    flex-shrink:0;
-  }
-  .title .catch{
-    display:inline-block;
-    font-size:4mm;font-weight:700;color:var(--blue);
-    background:var(--sky-soft);
-    padding:1.2mm 5mm;border-radius:20mm;
-    margin-bottom:2.2mm;
-  }
+  /* タイトル */
+  .title{text-align:center;padding:1mm 11mm 0;flex-shrink:0;}
   h1{
-    font-size:13.5mm;font-weight:900;
-    color:var(--blue-deep);
-    line-height:1.15;
-    letter-spacing:.01em;
+    font-size:12.5mm;font-weight:900;color:var(--blue-deep);
+    line-height:1.15;letter-spacing:.01em;
   }
-  .sub{
-    font-size:5.4mm;font-weight:700;
-    color:var(--blue);
-    margin-top:2mm;
-  }
-  .lead{
-    font-size:3.6mm;line-height:1.75;
-    color:var(--muted);
-    margin-top:3mm;
-    text-align:center;
-  }
+  .sub{font-size:4.8mm;font-weight:700;color:var(--blue);margin-top:1.5mm;}
+  .lead{font-size:3.3mm;line-height:1.7;color:var(--muted);margin-top:2mm;}
 
-  /* === 3テーマ === */
-  .themes{
-    display:flex;gap:4mm;
-    padding:5mm 12mm 0;
-    flex-shrink:0;
+  /* 第一回 */
+  .first{
+    margin:4mm 11mm 0;
+    border:0.6mm solid var(--blue);border-radius:3mm;
+    overflow:hidden;flex-shrink:0;
   }
-  .theme{
-    flex:1;
-    border:0.4mm solid var(--line);
-    border-radius:3mm;
-    padding:3mm 2.5mm;
-    text-align:center;
-  }
-  .theme .n{font-size:2.6mm;font-weight:700;color:var(--red);letter-spacing:.16em;}
-  .theme h3{font-size:6mm;font-weight:900;color:var(--blue-deep);margin:1mm 0 1.5mm;line-height:1.2;}
-  .theme p{font-size:2.9mm;line-height:1.65;color:var(--muted);}
-
-  /* === 開催概要 === */
-  .info{
-    margin:5mm 12mm 0;
-    border:0.5mm solid var(--blue);
-    border-radius:3mm;
-    overflow:hidden;
-    flex-shrink:0;
-  }
-  .info-head{
+  .first-head{
     background:var(--blue);color:#fff;
-    font-size:3.8mm;font-weight:900;
-    letter-spacing:.1em;
-    text-align:center;padding:1.4mm;
+    display:flex;align-items:center;gap:3mm;
+    padding:1.6mm 4mm;
   }
-  .info dl{display:grid;grid-template-columns:24mm 1fr;}
-  .info dt{
-    font-size:3.4mm;font-weight:700;color:var(--blue-deep);
-    background:#f2f7fa;
-    padding:1.8mm 3mm;
-    border-top:0.3mm solid var(--line);
-    display:flex;align-items:center;
-  }
-  .info dd{
-    font-size:3.5mm;
-    padding:1.8mm 4mm;
-    border-top:0.3mm solid var(--line);
-    display:flex;align-items:center;flex-wrap:wrap;gap:0 2mm;
-  }
-  .info dl > dt:first-of-type,
-  .info dl > dt:first-of-type + dd{border-top:none;}
-  .info dd small{font-size:2.9mm;color:var(--muted);display:block;width:100%;line-height:1.6;}
-  .tbd{
-    display:inline-block;
-    border:0.3mm dashed #a8b6c2;color:var(--muted);
-    font-size:3.2mm;
+  .first-head .no{
+    background:#fff;color:var(--blue);
+    font-size:3.4mm;font-weight:900;
     padding:.4mm 3mm;border-radius:10mm;
   }
-  .yen{color:var(--red);font-weight:900;font-size:4.6mm;}
+  .first-head .lbl{font-size:3.3mm;font-weight:700;letter-spacing:.06em;}
+  .first-body{padding:3.2mm 5mm 3.4mm;}
+  .theme{font-size:6.6mm;font-weight:900;color:var(--blue-deep);line-height:1.3;}
+  .theme-sub{font-size:3.6mm;font-weight:700;color:var(--blue);margin-top:1mm;}
+  .flow{
+    display:flex;flex-wrap:wrap;gap:1.4mm 1.6mm;margin-top:2.4mm;
+    list-style:none;
+  }
+  .flow li{
+    font-size:2.9mm;color:var(--blue-deep);font-weight:700;
+    background:var(--sky-soft);border-radius:10mm;padding:.6mm 2.6mm;
+  }
+  .facts{
+    display:grid;grid-template-columns:15mm 1fr;gap:1.4mm 0;
+    margin-top:3mm;padding-top:2.8mm;border-top:0.3mm dashed var(--line);
+  }
+  .facts dt{font-size:3.3mm;font-weight:700;color:var(--blue);}
+  .facts dd{font-size:3.6mm;font-weight:700;line-height:1.45;}
+  .facts dd.big{font-size:5.2mm;font-weight:900;color:var(--ink);line-height:1.25;}
+  .facts dd small{display:block;font-size:2.9mm;font-weight:500;color:var(--muted);}
 
-  /* === 申込／QR === */
+  /* 第二回以降 */
+  .next{
+    margin:3.5mm 11mm 0;
+    background:var(--cream);border-radius:3mm;
+    padding:3mm 5mm 3.2mm;flex-shrink:0;
+  }
+  .next-title{font-size:3.6mm;font-weight:900;color:var(--blue-deep);margin-bottom:1.8mm;}
+  .sched{display:flex;gap:2mm;}
+  .sched div{
+    flex:1;background:#fff;border-radius:2mm;
+    text-align:center;padding:1.6mm 1mm;
+  }
+  .sched .n{font-size:2.9mm;font-weight:700;color:var(--red);}
+  .sched .d{font-size:4.2mm;font-weight:900;color:var(--blue-deep);line-height:1.3;}
+  .sched .d small{font-size:2.8mm;font-weight:500;color:var(--muted);margin-left:.6mm;}
+  .next ul{list-style:none;margin-top:2.2mm;}
+  .next li{
+    font-size:3.1mm;line-height:1.6;padding-left:3.2mm;position:relative;
+  }
+  .next li::before{content:"●";position:absolute;left:0;top:.5mm;font-size:1.9mm;color:var(--blue);}
+  .next li b{color:var(--blue-deep);}
+
+  /* 概要＋講師 */
+  .row{display:flex;gap:4mm;margin:3.5mm 11mm 0;flex-shrink:0;}
+  .info{flex:1.25;border:0.3mm solid var(--line);border-radius:3mm;padding:2.6mm 3.6mm;}
+  .info dl{display:grid;grid-template-columns:13mm 1fr;gap:1.3mm 0;}
+  .info dt{font-size:3mm;font-weight:700;color:var(--blue-deep);}
+  .info dd{font-size:3.1mm;line-height:1.45;}
+  .info dd b{color:var(--red);font-weight:900;}
+  .info dd small{display:block;font-size:2.6mm;color:var(--muted);}
+  .nb{white-space:nowrap;}
+  .lecturer{
+    flex:1;border:0.3mm solid var(--line);border-radius:3mm;
+    padding:2.6mm 3.4mm;display:flex;gap:2.6mm;align-items:flex-start;
+  }
+  .lecturer img{width:15mm;height:15mm;border-radius:50%;border:0.3mm solid var(--line);flex-shrink:0;}
+  .lecturer .lbl{font-size:2.6mm;font-weight:700;color:var(--red);letter-spacing:.1em;}
+  .lecturer .nm{font-size:4.2mm;font-weight:900;line-height:1.3;}
+  .lecturer .nm small{font-size:2.5mm;font-weight:500;color:var(--muted);margin-left:1mm;}
+  .lecturer .rl{font-size:2.6mm;font-weight:700;color:var(--blue);margin-top:.3mm;}
+  .lecturer p{font-size:2.65mm;line-height:1.6;color:var(--muted);margin-top:1mm;}
+
+  /* 申込・QR */
   .apply{
-    margin:5mm 12mm 0;
-    background:var(--cream);
-    border-radius:3mm;
-    padding:4mm;
-    display:flex;align-items:center;gap:6mm;
-    flex-shrink:0;
+    margin:3.5mm 11mm 0;
+    display:flex;align-items:center;gap:5mm;
+    border:0.6mm solid var(--red);border-radius:3mm;
+    padding:3mm 5mm;flex-shrink:0;
   }
-  .apply .qr{
-    width:28mm;height:28mm;
-    background:#fff;padding:2mm;border-radius:2mm;
-    flex-shrink:0;
-  }
+  .apply .qr{width:25mm;height:25mm;flex-shrink:0;}
   .apply .qr img{width:100%;height:100%;display:block;}
-  .apply .txt{flex:1;}
-  .apply .ttl{
-    font-size:4.2mm;font-weight:900;color:var(--blue-deep);
-    margin-bottom:1.5mm;
-  }
+  .apply .ttl{font-size:4.4mm;font-weight:900;color:var(--red);line-height:1.35;}
   .apply .url{
-    font-size:5mm;font-weight:700;color:var(--blue);
-    word-break:break-all;line-height:1.35;
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    margin-bottom:1.5mm;
+    font-size:4.6mm;font-weight:700;color:var(--blue);
+    font-family:"Helvetica Neue",Arial,sans-serif;margin-top:.8mm;
   }
-  .apply .note{font-size:3mm;color:var(--muted);line-height:1.7;}
+  .apply .note{font-size:2.9mm;line-height:1.6;color:var(--muted);margin-top:1mm;}
 
-  /* === 注意書き === */
-  .notes{
-    padding:3mm 12mm 0;
-    font-size:2.9mm;color:var(--muted);line-height:1.7;
-    flex-shrink:0;
-  }
-  .notes li{list-style:none;padding-left:3.5mm;position:relative;}
-  .notes li::before{content:"●";position:absolute;left:0;font-size:2mm;top:.6mm;color:var(--sky);}
+  /* 注意書き */
+  .notes{padding:2.6mm 11mm 0;font-size:2.7mm;color:var(--muted);line-height:1.6;flex-shrink:0;}
+  .notes li{list-style:none;padding-left:3mm;position:relative;}
+  .notes li::before{content:"・";position:absolute;left:0;}
 
-  /* === フッター === */
+  /* フッター */
   .foot{
-    margin-top:auto;
-    background:var(--blue-deep);color:#fff;
-    padding:3.5mm 12mm;
-    display:flex;align-items:center;justify-content:space-between;gap:5mm;
-    flex-shrink:0;
+    margin-top:auto;background:var(--blue-deep);color:#fff;
+    padding:3mm 11mm;flex-shrink:0;
+    display:flex;align-items:center;justify-content:space-between;gap:4mm;
   }
-  .foot img{width:17mm;height:auto;background:#fff;border-radius:2mm;padding:1.5mm;}
+  .foot img{width:15mm;height:auto;background:#fff;border-radius:2mm;padding:1.2mm;}
   .foot .txt{text-align:right;}
-  .foot .main{font-size:4mm;font-weight:900;line-height:1.45;}
-  .foot .sub2{font-size:2.8mm;opacity:.8;margin-top:1mm;}
+  .foot .main{font-size:3.7mm;font-weight:900;line-height:1.4;}
+  .foot .sub2{font-size:2.5mm;opacity:.82;margin-top:.6mm;}
 </style>
 </head>
 <body>
@@ -215,70 +188,92 @@
   <div class="head">
     <!-- 必須記載事項 ②ロゴマーク -->
     <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
-    <span class="free">参加費　無料</span>
+    <div class="badges">
+      <span class="badge blue">月1回・全4回</span>
+      <span class="badge red">参加費 無料</span>
+    </div>
   </div>
 
   <div class="title">
-    <span class="catch">「名前は聞くけれど、さわったことがない」方へ</span>
     <h1>貝塚デジタル共創ラボ</h1>
     <div class="sub">～ AI・DX・デジタルマネーの基礎を学ぶ ～</div>
     <p class="lead">
-      これからの暮らしと仕事にかかわる3つのテーマを、専門用語からではなく、<br>
-      実際に手を動かすところから学べる講座です。貝塚市内で開催します。
+      暮らしと仕事にかかわるデジタルの話を、専門用語をできるだけ使わずにお話しする公開講座です。
     </p>
   </div>
 
-  <div class="themes">
-    <div class="theme">
-      <div class="n">THEME 01</div>
-      <h3>AI</h3>
-      <p>生成AIとは何かという話から始めて、その場で触りながら、仕事や暮らしでの使いどころを確かめます。</p>
+  <!-- 第一回（確定情報） -->
+  <div class="first">
+    <div class="first-head">
+      <span class="no">第一回</span>
+      <span class="lbl">日時・会場が決まりました</span>
     </div>
-    <div class="theme">
-      <div class="n">THEME 02</div>
-      <h3>DX</h3>
-      <p>「デジタル化」と何が違うのか。小さなお店でも今日から試せる考え方と道具を紹介します。</p>
-    </div>
-    <div class="theme">
-      <div class="n">THEME 03</div>
-      <h3>デジタルマネー</h3>
-      <p>キャッシュレス決済や電子マネーの仕組みを、安全に使うための注意点とあわせて整理します。</p>
+    <div class="first-body">
+      <div class="theme">AIで、仕事はどこまで楽になる？</div>
+      <div class="theme-sub">～ 基本の使い方から、仕組み化と費用の考え方まで ～</div>
+      <ul class="flow">
+        <li>AIとは何か</li>
+        <li>具体的な使い方（実演）</li>
+        <li>仕事に組み込むと</li>
+        <li>費用の目安と考え方</li>
+      </ul>
+      <dl class="facts">
+        <dt>日時</dt>
+        <dd class="big">令和8年11月7日（土）13:30〜15:00</dd>
+        <dt>会場</dt>
+        <dd>貝塚市福祉センター 4階 会議室
+          <small>大阪府貝塚市畠中1丁目17番1号（貝塚市役所）</small>
+        </dd>
+      </dl>
     </div>
   </div>
 
-  <div class="info">
-    <div class="info-head">開催概要</div>
-    <dl>
-      <dt>開催日時</dt>
-      <dd><span class="tbd">準備中</span><small>決定次第、ウェブサイトでお知らせします</small></dd>
-
-      <dt>会場</dt>
-      <dd><span class="tbd">準備中</span><small>大阪府貝塚市内で開催予定です</small></dd>
-
-      <dt>参加費</dt>
-      <dd><span class="yen">無料</span></dd>
-
-      <dt>定員</dt>
-      <dd><span class="tbd">準備中</span></dd>
-
-      <dt>対象</dt>
-      <dd>高校生以上の方ならどなたでも
-        <small>スマートフォン、またはノートパソコンの基本的な操作ができる方</small>
-      </dd>
-
-      <dt>持ち物</dt>
-      <dd>スマートフォン、またはノートパソコン</dd>
-    </dl>
+  <!-- 第二回以降（予定） -->
+  <div class="next">
+    <div class="next-title">第二回以降の予定</div>
+    <div class="sched">
+      <div><div class="n">第二回</div><div class="d">12月中旬<small>予定</small></div></div>
+      <div><div class="n">第三回</div><div class="d">1月中旬<small>予定</small></div></div>
+      <div><div class="n">第四回</div><div class="d">2月中旬<small>予定</small></div></div>
+    </div>
+    <ul>
+      <li><b>テーマ</b>：AI、DX、デジタルマネーなどを扱います。</li>
+      <li><b>会場</b>：回によって変わる場合があります。</li>
+      <li>各回の日時・会場・テーマの詳細は、<b>Webサイトをご確認ください。</b></li>
+    </ul>
   </div>
 
+  <!-- 概要＋講師 -->
+  <div class="row">
+    <div class="info">
+      <dl>
+        <dt>参加費</dt><dd><b>無料</b></dd>
+        <dt>定員</dt><dd>第一回は20名程度</dd>
+        <dt>対象</dt><dd>市民の方、地域の事業者の方、市民活動団体の方など、<span class="nb">高校生以上の方ならどなたでも</span>
+          <small>市外の方もご参加いただけます</small></dd>
+        <dt>持ち物</dt><dd>特になし（手ぶらでOK）</dd>
+      </dl>
+    </div>
+    <div class="lecturer">
+      <img src="lecturer.png" alt="講師のイラスト">
+      <div>
+        <div class="lbl">講師</div>
+        <div class="nm">谷口 英<small>たにぐち あきら</small></div>
+        <div class="rl">エンジニア／合同会社谷口商店 代表社員</div>
+        <p>エンジニア歴およそ20年。業務システムの導入から、ブロックチェーン・デジタルマネーの開発まで。AIを日々の仕事で活用しています。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 申込・QR -->
   <div class="apply">
-    <div class="qr"><img src="qr.svg" alt="ウェブサイトのQRコード"></div>
-    <div class="txt">
-      <div class="ttl">くわしくは、ウェブサイトをご覧ください</div>
+    <div class="qr"><img src="qr.svg" alt="WebサイトのQRコード"></div>
+    <div>
+      <div class="ttl">お申し込み・最新情報は、Webサイトから</div>
       <div class="url">https://kyousou.vercel.app/</div>
       <div class="note">
-        開催日・会場・お申し込み方法は、決定しだいウェブサイトでお知らせします。<br>
-        スマートフォンで左のQRコードを読み取ってください。
+        お名前やご連絡先はうかがいません。お申し込みがなくても、空きがあれば当日参加いただけます。<br>
+        中止や変更も、Webサイトでお知らせします。
       </div>
     </div>
   </div>
@@ -286,7 +281,7 @@
   <ul class="notes">
     <li>18歳未満の方は、保護者の同意のうえお申し込みください。</li>
     <li>当日は記録のため、会場の写真を撮影する場合があります。</li>
-    <li>お問い合わせ先は準備中です。決定しだいウェブサイトでお知らせします。</li>
+    <li>お問い合わせ：dededededaiou2003@gmail.com</li>
   </ul>
 
   <div class="foot">
@@ -294,7 +289,7 @@
     <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
     <div class="txt">
       <!-- 必須記載事項 ①事業名の文言 -->
-      <div class="main">貝塚市公民連携による<br>地域活性化共創チャレンジ事業</div>
+      <div class="main">貝塚市公民連携による地域活性化共創チャレンジ事業</div>
       <div class="sub2">本事業は、貝塚市公民連携共創推進協議会の採択事業です。</div>
     </div>
   </div>

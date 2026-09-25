@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>貝塚デジタル共創ラボ ポスター（A3）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page{ size:A3; margin:0; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --blue:#0f5fa6;
+    --blue-deep:#0a4478;
+    --red:#e4322b;
+    --sky-soft:#e8f6fc;
+    --cream:#fcefce;
+    --ink:#16242f;
+    --muted:#55656f;
+    --line:#cfdbe4;
+  }
+  html,body{
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    color:var(--ink);
+    background:#e9eef2;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .page{
+    width:297mm;height:420mm;
+    background:#fff;margin:0 auto;
+    position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  @media screen{ .page{margin:16px auto;box-shadow:0 4px 24px rgba(0,0,0,.18);} }
+  @media print{ body{background:#fff;} .page{margin:0;box-shadow:none;} }
+
+  .govbar{
+    background:var(--blue);color:#fff;text-align:center;
+    font-size:5.4mm;font-weight:700;letter-spacing:.05em;
+    padding:3.4mm 6mm;flex-shrink:0;
+  }
+
+  .head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:7mm 16mm 0;flex-shrink:0;
+  }
+  .head img{width:34mm;height:auto;}
+  .badges{display:flex;flex-direction:column;align-items:flex-end;gap:3mm;}
+  .badge{
+    color:#fff;font-weight:900;white-space:nowrap;
+    font-size:7mm;letter-spacing:.06em;
+    padding:2.4mm 8mm;border-radius:30mm;
+  }
+  .badge.red{background:var(--red);}
+  .badge.blue{background:var(--blue);}
+
+  .title{text-align:center;padding:3mm 14mm 0;flex-shrink:0;}
+  h1{
+    font-size:21mm;font-weight:900;color:var(--blue-deep);
+    line-height:1.15;letter-spacing:.01em;
+  }
+  .sub{font-size:8mm;font-weight:700;color:var(--blue);margin-top:3mm;}
+
+  .first{
+    margin:9mm 16mm 0;
+    border:1mm solid var(--blue);border-radius:5mm;
+    overflow:hidden;flex-shrink:0;
+  }
+  .first-head{
+    background:var(--blue);color:#fff;
+    padding:2.6mm 7mm;
+    display:flex;align-items:center;gap:4mm;
+  }
+  .first-head .no{
+    background:#fff;color:var(--blue);
+    font-size:6mm;font-weight:900;
+    padding:.6mm 5mm;border-radius:20mm;
+  }
+  .first-head .lbl{font-size:5.4mm;font-weight:700;letter-spacing:.06em;}
+  .first-body{padding:6mm 8mm 7mm;text-align:center;}
+  .theme{font-size:12mm;font-weight:900;color:var(--blue-deep);line-height:1.3;}
+  .theme-sub{font-size:5.6mm;font-weight:700;color:var(--blue);margin-top:2mm;}
+  .date{
+    font-size:11.5mm;font-weight:900;color:var(--ink);
+    margin-top:6mm;padding-top:5mm;border-top:.4mm dashed var(--line);
+    line-height:1.25;
+  }
+  .place{font-size:7mm;font-weight:700;margin-top:2.5mm;}
+  .place small{display:block;font-size:4.6mm;font-weight:500;color:var(--muted);margin-top:1mm;}
+
+  .next{
+    margin:6mm 16mm 0;
+    background:var(--cream);border-radius:5mm;
+    padding:5mm 8mm 5.5mm;flex-shrink:0;
+  }
+  .sched{display:flex;gap:4mm;}
+  .sched div{
+    flex:1;background:#fff;border-radius:3mm;
+    text-align:center;padding:2.8mm 2mm;
+  }
+  .sched .n{font-size:4.8mm;font-weight:700;color:var(--red);}
+  .sched .d{font-size:7.4mm;font-weight:900;color:var(--blue-deep);line-height:1.3;}
+  .sched .d small{font-size:4.4mm;font-weight:500;color:var(--muted);margin-left:1mm;}
+  .next p{font-size:5mm;line-height:1.65;text-align:center;margin-top:3.5mm;}
+  .next p b{color:var(--blue-deep);}
+
+  .chips{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:3mm;
+    margin:6mm 16mm 0;flex-shrink:0;
+  }
+  .chips span{
+    font-size:5.4mm;font-weight:700;color:var(--blue-deep);
+    border:.5mm solid var(--blue);border-radius:20mm;
+    padding:1.6mm 6mm;
+  }
+
+  .apply{
+    margin:7mm 16mm 0;
+    display:flex;align-items:center;gap:9mm;
+    border:1mm solid var(--red);border-radius:5mm;
+    padding:6mm 9mm;flex-shrink:0;
+  }
+  .apply .qr{width:52mm;height:52mm;flex-shrink:0;}
+  .apply .qr img{width:100%;height:100%;display:block;}
+  .apply .ttl{font-size:8.4mm;font-weight:900;color:var(--red);line-height:1.35;}
+  .apply .url{
+    font-size:8mm;font-weight:700;color:var(--blue);
+    font-family:"Helvetica Neue",Arial,sans-serif;margin-top:2mm;
+  }
+  .apply .note{font-size:4.6mm;line-height:1.6;color:var(--muted);margin-top:2mm;}
+
+  .lect{
+    text-align:center;font-size:5mm;color:var(--muted);
+    margin:5mm 16mm 0;flex-shrink:0;
+  }
+  .lect b{color:var(--ink);font-size:6mm;}
+
+  .foot{
+    margin-top:auto;background:var(--blue-deep);color:#fff;
+    padding:5mm 16mm;flex-shrink:0;
+    display:flex;align-items:center;justify-content:space-between;gap:6mm;
+  }
+  .foot img{width:26mm;height:auto;background:#fff;border-radius:3mm;padding:2mm;}
+  .foot .txt{text-align:right;}
+  .foot .main{font-size:6.4mm;font-weight:900;line-height:1.4;}
+  .foot .sub2{font-size:4mm;opacity:.82;margin-top:1mm;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 必須記載事項 ①事業名の文言 -->
+  <div class="govbar">貝塚市公民連携による地域活性化共創チャレンジ事業</div>
+
+  <div class="head">
+    <!-- 必須記載事項 ②ロゴマーク -->
+    <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
+    <div class="badges">
+      <span class="badge red">参加費 無料</span>
+      <span class="badge blue">月1回・全4回の公開講座</span>
+    </div>
+  </div>
+
+  <div class="title">
+    <h1>貝塚デジタル共創ラボ</h1>
+    <div class="sub">～ AI・DX・デジタルマネーの基礎を学ぶ ～</div>
+  </div>
+
+  <div class="first">
+    <div class="first-head">
+      <span class="no">第一回</span>
+      <span class="lbl">日時・会場が決まりました</span>
+    </div>
+    <div class="first-body">
+      <div class="theme">AIで、仕事はどこまで楽になる？</div>
+      <div class="theme-sub">～ 基本の使い方から、仕組み化と費用の考え方まで ～</div>
+      <div class="date">令和8年11月7日（土）13:30〜15:00</div>
+      <div class="place">貝塚市福祉センター 4階 会議室
+        <small>大阪府貝塚市畠中1丁目17番1号（貝塚市役所）</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="next">
+    <div class="sched">
+      <div><div class="n">第二回</div><div class="d">12月中旬<small>予定</small></div></div>
+      <div><div class="n">第三回</div><div class="d">1月中旬<small>予定</small></div></div>
+      <div><div class="n">第四回</div><div class="d">2月中旬<small>予定</small></div></div>
+    </div>
+    <p>
+      テーマは<b>AI、DX、デジタルマネーなど</b>を扱います。会場は回によって変わる場合があります。<br>
+      各回の詳細は、<b>Webサイトをご確認ください。</b>
+    </p>
+  </div>
+
+  <div class="chips">
+    <span>高校生以上の方ならどなたでも</span>
+    <span>市外の方もOK</span>
+    <span>手ぶらでOK</span>
+    <span>空きがあれば当日参加OK</span>
+  </div>
+
+  <div class="apply">
+    <div class="qr"><img src="qr.svg" alt="WebサイトのQRコード"></div>
+    <div>
+      <div class="ttl">お申し込み・最新情報は<br>Webサイトから</div>
+      <div class="url">https://kyousou.vercel.app/</div>
+      <div class="note">お名前やご連絡先はうかがいません。</div>
+    </div>
+  </div>
+
+  <div class="lect">講師　<b>谷口 英</b>（エンジニア／合同会社谷口商店 代表社員）</div>
+
+  <div class="foot">
+    <!-- 必須記載事項 ②ロゴマーク -->
+    <img src="logo.png" alt="かいづか共創チャレンジ ロゴマーク">
+    <div class="txt">
+      <!-- 必須記載事項 ①事業名の文言 -->
+      <div class="main">貝塚市公民連携による地域活性化共創チャレンジ事業</div>
+      <div class="sub2">本事業は、貝塚市公民連携共創推進協議会の採択事業です。</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
