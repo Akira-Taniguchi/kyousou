@@ -224,6 +224,36 @@
   .flow p{margin:6px 0 0;font-size:14px;color:var(--muted);line-height:1.8;}
   .theme-note{margin:18px 0 0;font-size:13px;color:var(--muted);}
 
+  /* ---- 講師 ---- */
+  .lecturer{
+    display:grid;gap:22px;grid-template-columns:1fr;
+    align-items:start;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 22px;
+  }
+  @media(min-width:640px){.lecturer{grid-template-columns:150px 1fr;gap:28px;padding:30px;}}
+  .lecturer-photo{
+    width:130px;height:130px;border-radius:50%;
+    border:1px solid var(--line);background:#fff;
+    justify-self:center;
+  }
+  @media(min-width:640px){.lecturer-photo{width:150px;height:150px;}}
+  .lecturer-name{margin:0;font-size:22px;font-weight:900;color:var(--ink);line-height:1.4;}
+  .lecturer-name small{font-size:13px;font-weight:500;color:var(--muted);margin-left:8px;}
+  .lecturer-role{margin:4px 0 14px;font-size:14px;color:var(--blue);font-weight:700;}
+  .lecturer-bio{margin:0;font-size:15px;line-height:1.9;}
+  .lecturer-career{margin:16px 0 0;padding-left:1.2em;font-size:14px;color:var(--muted);}
+  .lecturer-career li{margin-bottom:3px;}
+  .lecturer-career a{color:var(--blue);}
+  .lecturer-link{
+    display:inline-block;margin-top:18px;
+    font-size:14px;font-weight:700;color:var(--blue);
+    text-decoration:none;
+    border:1.5px solid var(--blue);border-radius:999px;
+    padding:8px 20px;
+  }
+  .lecturer-link:hover{background:var(--sky-soft);}
+
   /* ---- 申込 ---- */
   .apply{
     border:2px solid var(--line);
@@ -394,7 +424,31 @@
   </div>
 </section>
 
-<section class="alt" id="apply">
+<section class="alt" id="lecturer">
+  <div class="wrap">
+    <h2>講師</h2>
+    <p class="sec-note">現役のエンジニアが、実務での経験をもとにお話しします。</p>
+    <div class="lecturer">
+      <img class="lecturer-photo" src="lecturer.png" alt="講師 谷口英のイラスト">
+      <div>
+        <p class="lecturer-name">谷口 英<small>たにぐち あきら</small></p>
+        <p class="lecturer-role">エンジニア／合同会社谷口商店 代表社員</p>
+        <p class="lecturer-bio">
+          エンジニア歴およそ20年。業務システムの導入やウェブサービスの開発を経て、2016年からはブロックチェーン・デジタルマネーの分野で開発に携わってきました。現在は、さまざまな企業のプロジェクトに技術リードとして参加しながら、AIを日々の仕事で活用しています。貝塚市を拠点に活動しています。
+        </p>
+        <ul class="lecturer-career">
+          <li>大阪産業創造館 講座講師（ブロックチェーン開発）</li>
+          <li>PyCon JP 登壇（<a href="https://www.youtube.com/watch?v=p4EElYZwZw4" target="_blank" rel="noopener">2015</a>・2016・<a href="https://www.youtube.com/watch?v=fg57wEACR0k&amp;t=7s" target="_blank" rel="noopener">2017</a>）</li>
+          <li><a href="https://osaka.pycon.jp/" target="_blank" rel="noopener">PyCon mini Osaka</a> 座長</li>
+          <li><a href="https://kansai-tcc.dle.or.jp/" target="_blank" rel="noopener">関西テッククリエイターチャレンジ</a> PM（2024・2025・2026）</li>
+        </ul>
+        <a class="lecturer-link" href="https://taniguchi-shoten.vercel.app/" target="_blank" rel="noopener">合同会社谷口商店のホームページ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
   <div class="wrap">
     <h2>お申し込み</h2>
     <p class="sec-note">お申し込みの受付は、準備が整い次第このページで開始します。</p>
