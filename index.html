@@ -195,6 +195,34 @@
     letter-spacing:.1em;margin-bottom:10px;
   }
   .theme-box .tbd{font-size:15px;padding:6px 22px;background:rgba(255,255,255,.75);}
+  .theme-title{
+    margin:0;
+    font-size:clamp(21px,4.6vw,28px);font-weight:900;
+    color:var(--blue-deep);line-height:1.45;
+  }
+  .theme-sub{margin:6px 0 0;font-size:15px;font-weight:700;color:var(--blue);}
+  .flow{
+    list-style:none;margin:26px 0 0;padding:0;
+    display:grid;gap:12px;grid-template-columns:1fr;
+    counter-reset:flow;text-align:left;
+  }
+  @media(min-width:700px){.flow{grid-template-columns:1fr 1fr;}}
+  .flow li{
+    background:#fff;border-radius:12px;
+    padding:16px 18px 14px;
+    counter-increment:flow;
+  }
+  .flow li::before{
+    content:counter(flow);
+    display:inline-flex;align-items:center;justify-content:center;
+    width:24px;height:24px;border-radius:50%;
+    background:var(--blue);color:#fff;
+    font-size:12px;font-weight:700;
+    margin-right:8px;vertical-align:1px;
+  }
+  .flow h3{display:inline;margin:0;font-size:16px;font-weight:900;color:var(--blue-deep);}
+  .flow p{margin:6px 0 0;font-size:14px;color:var(--muted);line-height:1.8;}
+  .theme-note{margin:18px 0 0;font-size:13px;color:var(--muted);}
 
   /* ---- 申込 ---- */
   .apply{
@@ -284,6 +312,9 @@
         <dt>開催日時</dt>
         <dd>第一回　令和8年11月7日（土）13:30〜15:00<small>第二回は12月中旬、第三回は1月中旬、第四回は2月中旬を予定しています。</small></dd>
 
+        <dt>テーマ</dt>
+        <dd>第一回　AIで、仕事はどこまで楽になる？<small>基本の使い方から、仕組み化と費用の考え方まで</small></dd>
+
         <dt>会場</dt>
         <dd>貝塚市福祉センター 4階 会議室<small>大阪府貝塚市畠中1丁目17番1号（貝塚市役所）</small></dd>
 
@@ -335,10 +366,30 @@
 <section>
   <div class="wrap">
     <h2>第一回のテーマ</h2>
-    <p class="sec-note">初回に扱う内容を検討しています。</p>
+    <p class="sec-note">約60分のお話のあと、質疑応答の時間を設けます。途中の質問も歓迎です。</p>
     <div class="theme-box">
       <div class="label">FIRST SESSION</div>
-      <span class="tbd">準備中</span>
+      <p class="theme-title">AIで、仕事はどこまで楽になる？</p>
+      <p class="theme-sub">～基本の使い方から、仕組み化と費用の考え方まで～</p>
+      <ol class="flow">
+        <li>
+          <h3>AIとは何か</h3>
+          <p>AIが得意なこと、苦手なこと。よくある誤解もあわせて整理します。</p>
+        </li>
+        <li>
+          <h3>具体的な使い方</h3>
+          <p>文章づくり、要約、資料づくり、アイデア出しを実演します。スマートフォンをお持ちの方は、その場で試していただける時間もあります。</p>
+        </li>
+        <li>
+          <h3>仕事に組み込むと</h3>
+          <p>既にあるサービスで済むこと、ちょっとした工夫で済むこと、仕組みを作る必要があること。それぞれの費用の目安と、効果の見積もり方を、うまくいかなかった例も交えてお話しします。</p>
+        </li>
+        <li>
+          <h3>まとめ</h3>
+          <p>道具を入れるだけでなく、現場に根付かせることの大切さについて。次回（DX）へのつながりもご紹介します。</p>
+        </li>
+      </ol>
+      <p class="theme-note">※手ぶらでご参加いただけます。スマートフォンは、お持ちの方のみで大丈夫です。</p>
     </div>
   </div>
 </section>
