@@ -167,6 +167,16 @@
   .info dl > dt:first-of-type,
   .info dl > dt:first-of-type + dd{border-top:none;}
   .info dd small{display:block;font-size:13px;color:var(--muted);margin-top:3px;}
+  .session-materials{margin:12px 0 14px;}
+  .materials-link{
+    display:inline-flex;align-items:center;gap:8px;max-width:100%;
+    padding:10px 14px;border:1px solid #b8d8eb;border-radius:10px;
+    background:var(--sky-soft);color:var(--blue-deep);
+    font-size:14px;font-weight:700;line-height:1.6;text-decoration:none;
+  }
+  .materials-link:hover{background:#d6edf9;text-decoration:underline;}
+  .materials-link:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+  .materials-link svg{width:20px;height:20px;flex-shrink:0;}
   .price{color:var(--red);font-weight:900;font-size:18px;}
 
   /* ---- カリキュラム ---- */
@@ -354,7 +364,16 @@
         <dd>貝塚デジタル共創ラボ<br><small>～AI・DX・デジタルマネーの基礎を学ぶ～</small></dd>
 
         <dt>開催日時</dt>
-        <dd>第一回　令和8年11月7日（土）13:30〜15:00<small>第二回は12月中旬、第三回は1月中旬、第四回は2月中旬を予定しています。</small></dd>
+        <dd>第一回　令和8年11月7日（土）13:30〜15:00
+          <div class="session-materials">
+            <a class="materials-link" href="/materials/session-1-ai-20261019.pdf" target="_blank" rel="noopener" aria-label="第一回の講座資料を見る（PDF・40ページ、新しいタブで開きます）">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+              <span>第一回の講座資料を見る（PDF）</span>
+            </a>
+            <small>事前公開版・全40ページ／内容は当日までに更新する場合があります。</small>
+          </div>
+          <small>第二回は12月中旬、第三回は1月中旬、第四回は2月中旬を予定しています。</small>
+        </dd>
 
         <dt>テーマ</dt>
         <dd>第一回　AIで、仕事はどこまで楽になる？<small>基本の使い方から、仕組み化と費用の考え方まで</small></dd>
